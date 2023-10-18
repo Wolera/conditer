@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Product;
+namespace App\Product\Abstractions;
 
 interface ProductInterface
 {
+    public function getType(): string;
     public function getPrice(): int;
-    public function getExpirationDate(): int;
+    public function getShelfLifeHours(): int;
     public function getProductionTime(): int;
 }

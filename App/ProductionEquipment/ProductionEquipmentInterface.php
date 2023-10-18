@@ -2,7 +2,7 @@
 
 namespace App\ProductionEquipment;
 
-use App\Product\ProductInterface;
+use App\Product\Abstractions\ProductInterface;
 
 interface ProductionEquipmentInterface
 {
