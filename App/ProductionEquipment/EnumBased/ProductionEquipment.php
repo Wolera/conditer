@@ -2,17 +2,17 @@
 
 namespace App\ProductionEquipment\EnumBased;
 
-use App\Price\PriceInterface;
+use App\Price\CurrencyInterface;
 use App\Product\EnumBased\Product;
 use App\Product\ProductInterface;
-use App\Product\ProductType;
+use App\Product\Type;
 use App\ProductionEquipment\ProductionEquipmentInterface;
 use App\ShelfTime\ShelfTimeInterface;
 
 class ProductionEquipment implements ProductionEquipmentInterface
 {
     private int $id;
-    public function __construct(private readonly int $unitsPerHour, private ProductType $type)
+    public function __construct(private readonly int $unitsPerHour, private Type $type)
     {
         $this->id = hexdec(uniqid());
     }
@@ -32,7 +32,7 @@ class ProductionEquipment implements ProductionEquipmentInterface
         return $this->type->toString();
     }
 
-    public function produce(PriceInterface $price, ShelfTimeInterface $shelfTime): ProductInterface
+    public function produce(CurrencyInterface $price, ShelfTimeInterface $shelfTime): ProductInterface
     {
         return new Product($this->type, $price, $shelfTime);
     }

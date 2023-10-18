@@ -2,17 +2,17 @@
 
 namespace App\Product\EnumBased;
 
-use App\Price\PriceInterface;
+use App\Price\CurrencyInterface;
 use App\Product\ProductInterface;
-use App\Product\ProductType;
+use App\Product\Type;
 use App\ShelfTime\ShelfTimeInterface;
 
 class Product implements ProductInterface
 {
     private int $productionTime;
     public function __construct(
-        private readonly ProductType $type,
-        private PriceInterface $price,
+        private readonly Type      $type,
+        private CurrencyInterface  $price,
         private ShelfTimeInterface $shelfTime
     ){
         $this->productionTime = time();
@@ -23,7 +23,7 @@ class Product implements ProductInterface
         return $this->type->toString();
     }
 
-    public function getPrice(): PriceInterface
+    public function getPrice(): CurrencyInterface
     {
         return $this->price;
     }

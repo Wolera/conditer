@@ -2,7 +2,7 @@
 
 namespace App\Product;
 
-enum ProductType: string
+enum Type: string
 {
     case CHOCOLATE = 'chocolate';
     case CAKE = 'cake';
