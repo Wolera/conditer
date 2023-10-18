@@ -1,7 +1,3 @@
 <?php
-require '../helpers.php';
-require '../autoload.php';
-
-$user = new \App\User();
-$user->hello();
-echo $user->time();
+require __DIR__ . '/../helpers.php';
+require __DIR__ . '/../autoload.php';
