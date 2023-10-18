@@ -38,7 +38,7 @@ class Factory
     {
         $totalUnitsNumber = $equipment->getUnitsPerHour() * $hours;
         for($i = 0; $i < $totalUnitsNumber; $i ++) {
-            $this->equipmentStorage[] = $equipment->produce(new Price(rand(10, 20)), ShelfTime::fromHours(rand(10, 20)));
+            $this->productStorage[] = $equipment->produce(new Price(rand(10, 20)), ShelfTime::fromHours(rand(10, 20)));
         }
     }
 }

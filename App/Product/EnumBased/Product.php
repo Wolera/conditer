@@ -28,7 +28,7 @@ class Product implements ProductInterface
         return $this->price;
     }
 
-    public function getShelfTime(): int
+    public function getShelfTime(): ShelfTimeInterface
     {
         return $this->shelfTime;
     }
